@@ -3,7 +3,7 @@ import { ArrowUpRight } from "./Icons";
 
 export default function Header() {
   return (
-    <header className="wrap flex items-center justify-between border-b border-line pt-8 pb-7.5">
+    <header className="wrap flex items-center justify-between border-b border-line p-5 md:pb-7.5 md:pt-8">
       <a href="/" className="text-[22px] font-extrabold tracking-[-0.03em]">
         {profile.name}
         <span className="text-accent">.</span>
@@ -23,7 +23,7 @@ export default function Header() {
         ))}
         <a
           href={profile.resumeHref}
-          className="inline-flex items-center gap-2 rounded-full bg-accent px-5.5 py-2.5 text-[15px] font-medium text-bg transition hover:-translate-y-px"
+          className="inline-flex items-center gap-2 rounded-full bg-accent px-5.5 py-2.5 text-xs font-medium text-bg transition hover:-translate-y-px md:text-[15px]"
         >
           Résumé <ArrowUpRight />
         </a>
