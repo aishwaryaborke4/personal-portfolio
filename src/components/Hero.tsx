@@ -7,7 +7,7 @@ import { heroCode } from "../data/content";
 
 export default function Hero() {
   return (
-    <section id="top" className="wrap pt-14 pb-24 flex md:pt-22">
+    <section id="top" className="wrap py-14 flex flex-col gap-20 lg:flex-row lg:gap-10 md:pt-22 md:pb-24">
       <div>
         <p className="label-mono mb-9 flex items-center gap-2 text-accent">
           <span className="size-1.75 rounded-full bg-accent" />
@@ -42,10 +42,10 @@ export default function Hero() {
           </ul>
         </div>
       </div>
-      <div className="flex items-end mb-6">
-        <div className="relative w-md">
-          <div className="border border-white/10 rounded-2xl w-md bg-[#0d0f0e] shadow-2xl">
-            <div className="absolute -inset-10 rounded-full bg-[#D4F55A]/15 blur-3xl -z-10" />
+      <div className="flex items-center justify-center mb-6 md:items-end">
+        <div className="relative w-full sm:w-md">
+          <div className="border border-white/10 rounded-2xl w-full bg-[#0d0f0e] shadow-2xl sm:w-md">
+            <div className="absolute -inset-10 rounded-full bg-[#D4F55A]/15 blur-3xl -z-10 hidden md:block" />
             <div className="flex gap-2 items-center border-b border-white/10 px-6 py-3">
               <span className="inline-block w-2.5 h-2.5 bg-[#ff5f57] rounded" />
               <span className="inline-block w-2.5 h-2.5 bg-[#febc2e] rounded" />
@@ -55,7 +55,7 @@ export default function Hero() {
             <div className="overflow-x-auto py-4 font-mono text-[13px] leading-7">
               {heroCode.map((line, i) => (
                 <div key={i} className="flex whitespace-pre">
-                  <span className="w-12 shrink-0 pr-4 text-right text-muted/60">
+                  <span className="w-8 shrink-0 pl-2 text-left text-muted/60 md:w-12 md:pr-4 md:text-right">
                     {i + 1}
                   </span>
                   <code>
@@ -69,15 +69,15 @@ export default function Hero() {
               ))}
             </div>
           </div>
-          <div className="animate-float absolute -left-10 -top-6 flex items-center gap-2 rounded-full border border-white/10 bg-[#141712] px-3 py-2">
+          <div className="animate-float absolute -left-10 -top-6 items-center gap-2 rounded-full border border-white/10 bg-[#141712] px-3 py-2 hidden sm:flex">
             <img src={ReactLogo} width={20} alt="" />
             <span className="font-mono text-xs text-white/80">React</span>
           </div>
-          <div className="animate-float absolute -right-8 top-24 flex items-center gap-2 rounded-full border border-white/10 bg-[#141712] px-3 py-2 [animation-delay:1.5s]">
+          <div className="animate-float absolute -right-8 top-24 items-center gap-2 rounded-full border border-white/10 bg-[#141712] px-3 py-2 [animation-delay:1.5s] hidden sm:flex">
             <img src={JSLogo} width={20} alt="" />
             <span className="font-mono text-xs text-white/80">JavaScript</span>
           </div>
-          <div className="animate-float absolute flex items-center gap-2 -bottom-6 left-10 rounded-full border border-[#D4F55A]/40 bg-[#141712] px-4 py-2 font-mono text-xs [animation-delay:3s]">
+          <div className="animate-float absolute items-center gap-2 -bottom-6 left-10 rounded-full border border-[#D4F55A]/40 bg-[#141712] px-4 py-2 font-mono text-xs [animation-delay:3s] hidden sm:flex">
             <img src={CodeLogo} width={20} alt="" className="inline" />
             <span className="font-mono text-xs text-[#D4F55A]">3+ years</span>
           </div>

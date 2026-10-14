@@ -28,7 +28,7 @@ export default function Work() {
             <source src={ScreenVideo} type="video/mp4" />
           </video>
         </div>
-        <div className="flex items-center justify-between px-2 pt-5.5 pb-1">
+        <div className="flex gap-4 items-center justify-between px-2 pt-5.5 pb-1">
           <div>
             <h3 className="text-[28px] font-bold tracking-[-0.03em]">
               {featured.title}

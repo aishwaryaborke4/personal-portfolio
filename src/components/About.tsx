@@ -6,7 +6,7 @@ export default function About() {
     <section id="about" className="wrap pt-10 pb-20">
       <SectionLabel index="02" title="About" />
 
-      <div className="grid overflow-hidden rounded-2xl border border-line md:grid-cols-[minmax(0,1fr)_440px]">
+      <div className="overflow-hidden rounded-2xl border border-line md:grid-cols-[minmax(0,1fr)_440px] lg:grid">
         <div className="p-3 md:p-4">
           <div className="overflow-hidden rounded-xl border border-line bg-card">
             <div className="flex items-center gap-2 border-b border-line px-4 py-3">
@@ -20,11 +20,11 @@ export default function About() {
 
             <div className="overflow-x-auto py-4 font-mono text-[13px] leading-7">
               {codeLines.map((line, index) => (
-                <div key={index} className="flex whitespace-pre">
-                  <span className="w-12 shrink-0 pr-4 text-right text-muted/60">
+                <div key={index} className="flex md:whitespace-pre">
+                  <span className="w-8 shrink-0 pl-2 text-left text-muted/60 sm:w-12 sm:pr-4 sm:text-right">
                     {index + 1}
                   </span>
-                  <code>
+                  <code className="flex flex-wrap sm:block">
                     {line.map((part, i) => (
                       <span key={i} className={part.color}>
                         {part.text}
@@ -37,8 +37,8 @@ export default function About() {
           </div>
         </div>
 
-        <div className="grid place-items-center border-t border-line bg-[repeating-linear-gradient(135deg,transparent_0,transparent_6px,rgba(255,255,255,0.045)_6px,rgba(255,255,255,0.045)_7px)] p-6 md:border-l md:border-t-0">
-          <article className="w-full max-w-[300px] rounded-[28px] border border-line bg-card-inner p-3">
+        <div className="border-t border-line bg-[repeating-linear-gradient(135deg,transparent_0,transparent_6px,rgba(255,255,255,0.045)_6px,rgba(255,255,255,0.045)_7px)] p-6 md:grid place-items-center md:border-l md:border-t-0">
+          <article className="w-full max-w-sm rounded-[28px] border border-line bg-card-inner p-3 lg:max-w-[300px]">
             <div className="rounded-[18px] bg-bg p-5">
               <div className="overflow-hidden rounded-lg border border-line">
                 <div className="flex items-center justify-between px-3 py-2 text-[13px] font-medium">
