@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Train+One&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0a0a0a;
+  --color-fg: #f2f2f0;
+  --color-muted: #8c8c8c;
+  --color-accent: #c6f432;
+  --color-card: #111112;
+  --color-card-inner: #1b1b1e;
+  --color-line: #222224;
+  --color-chip: #333333;
+  --font-sans: "DM Sans", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --text-hero: clamp(3rem, 9.4vw, 6rem);
+  --text-cta: clamp(2.5rem, 7vw, 4.5rem);
+}
+.font-monoton {
+  font-family: "Train One", system-ui;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    @apply bg-bg font-sans text-fg antialiased;
+    cursor: pointer;
+  }
+  :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
+}
+
+
+/* Page-width wrapper shared by every section */
+@utility wrap {
+  width: max(1280px);
+  margin: auto;
+}
+
+@utility label-mono {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.spotlight-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+
+   background: radial-gradient(
+    circle,
+    rgba(129, 140, 248, 0.18) 0%,
+    rgba(129, 140, 248, 0.08) 35%,
+    transparent 70%
+  );
+
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: ease-out;
+}
+
+.corner {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border: 0 solid var(--color-accent);
+}
+
+.cursor-dot {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background-color: var(--color-accent);
+  border-radius: 50%;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
